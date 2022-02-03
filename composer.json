@@ -1,0 +1,24 @@
+{
+    "name": "mateuszmesek-magento2/module-document-catalog-product",
+    "description": "N/A",
+    "type": "magento2-module",
+    "require": {
+        "magento/framework": "*",
+        "magento/module-catalog": "*",
+        "mateuszmesek-magento2/module-document": "^1.0"
+    },
+    "replace": {
+        "mateuszmesek-magento2/module-document-catalog-product": "*"
+    },
+    "license": [
+        "MIT"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "MateuszMesek\\DocumentCatalogProduct\\": "src"
+        }
+    }
+}
