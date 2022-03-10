@@ -5,7 +5,7 @@
     "require": {
         "magento/framework": "*",
         "magento/module-catalog": "*",
-        "mateuszmesek-magento2/module-document-data": "^1.0"
+        "mateuszmesek-magento2/module-document-data": "*"
     },
     "replace": {
         "mateuszmesek-magento2/module-document-data-catalog-product": "*"
