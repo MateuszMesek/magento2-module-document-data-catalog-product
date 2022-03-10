@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:MateuszMesek_Indexer:etc/document_data.xsd">
+    <document name="catalog_product"/>
+</config>

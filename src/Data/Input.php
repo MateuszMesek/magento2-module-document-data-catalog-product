@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace MateuszMesek\DocumentCatalogProduct\Data;
+namespace MateuszMesek\DocumentDataCatalogProduct\Data;
 
 use Magento\Catalog\Api\Data\ProductInterface;
-use MateuszMesek\Document\Api\InputInterface;
+use MateuszMesek\DocumentDataApi\InputInterface;
 
 class Input implements InputInterface
 {
@@ -14,6 +14,11 @@ class Input implements InputInterface
     )
     {
         $this->product = $product;
+    }
+
+    public function getId(): string
+    {
+        return (string)$this->product->getId();
     }
 
     public function getProduct(): ProductInterface

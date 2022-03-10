@@ -1,14 +1,14 @@
 {
-    "name": "mateuszmesek-magento2/module-document-catalog-product",
+    "name": "mateuszmesek-magento2/module-document-data-catalog-product",
     "description": "N/A",
     "type": "magento2-module",
     "require": {
         "magento/framework": "*",
         "magento/module-catalog": "*",
-        "mateuszmesek-magento2/module-document": "^1.0"
+        "mateuszmesek-magento2/module-document-data": "^1.0"
     },
     "replace": {
-        "mateuszmesek-magento2/module-document-catalog-product": "*"
+        "mateuszmesek-magento2/module-document-data-catalog-product": "*"
     },
     "license": [
         "MIT"
@@ -18,7 +18,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "MateuszMesek\\DocumentCatalogProduct\\": "src"
+            "MateuszMesek\\DocumentDataCatalogProduct\\": "src"
         }
     }
 }

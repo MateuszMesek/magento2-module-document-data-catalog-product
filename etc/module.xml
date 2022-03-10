@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="MateuszMesek_DocumentCatalogProduct">
+    <module name="MateuszMesek_DocumentDataCatalogProduct">
         <sequence>
             <module name="Magento_Catalog"/>
-            <module name="MateuszMesek_Document"/>
+            <module name="MateuszMesek_DocumentData"/>
         </sequence>
     </module>
 </config>

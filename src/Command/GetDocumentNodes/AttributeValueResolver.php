@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace MateuszMesek\DocumentCatalogProduct\Command\GetDocumentNodes;
+namespace MateuszMesek\DocumentDataCatalogProduct\Command\GetDocumentNodes;
 
 use Magento\Catalog\Model\Product;
 use Magento\Eav\Api\Data\AttributeInterface;
-use MateuszMesek\Document\Api\InputInterface;
-use MateuszMesek\DocumentCatalogProduct\Data\Input;
-use MateuszMesek\DocumentEavApi\AttributeValueResolverInterface;
+use MateuszMesek\DocumentDataApi\InputInterface;
+use MateuszMesek\DocumentDataCatalogProduct\Data\Input;
+use MateuszMesek\DocumentDataEavApi\AttributeValueResolverInterface;
 
 class AttributeValueResolver implements AttributeValueResolverInterface
 {

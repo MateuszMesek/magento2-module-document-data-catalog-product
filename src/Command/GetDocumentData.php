@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace MateuszMesek\DocumentCatalogProduct\Command;
+namespace MateuszMesek\DocumentDataCatalogProduct\Command;
 
 use Magento\Catalog\Api\Data\ProductInterface;
 use Magento\Catalog\Model\Product;
-use MateuszMesek\Document\Api\Command\GetDocumentDataInterface;
-use MateuszMesek\DocumentCatalogProduct\Data\InputFactory;
+use MateuszMesek\DocumentDataApi\Command\GetDocumentDataInterface;
+use MateuszMesek\DocumentDataCatalogProduct\Data\InputFactory;
 
 class GetDocumentData
 {
