@@ -7,9 +7,6 @@
         "magento/module-catalog": "*",
         "mateuszmesek-magento2/module-document-data": "*"
     },
-    "replace": {
-        "mateuszmesek-magento2/module-document-data-catalog-product": "*"
-    },
     "license": [
         "MIT"
     ],
