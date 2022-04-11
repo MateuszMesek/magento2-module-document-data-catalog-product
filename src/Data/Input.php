@@ -16,11 +16,17 @@ class Input implements InputInterface
         $this->product = $product;
     }
 
+    /**
+     * @return string
+     */
     public function getId(): string
     {
         return (string)$this->product->getId();
     }
 
+    /**
+     * @return \Magento\Catalog\Api\Data\ProductInterface
+     */
     public function getProduct(): ProductInterface
     {
         return $this->product;
