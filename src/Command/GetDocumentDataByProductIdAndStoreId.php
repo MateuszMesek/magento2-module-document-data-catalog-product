@@ -4,6 +4,7 @@ namespace MateuszMesek\DocumentDataCatalogProduct\Command;
 
 use Magento\Catalog\Model\ProductFactory;
 use Magento\Catalog\Model\ResourceModel\Product as ProductResource;
+use MateuszMesek\DocumentDataApi\Data\DocumentDataInterface;
 
 class GetDocumentDataByProductIdAndStoreId
 {
@@ -22,7 +23,7 @@ class GetDocumentDataByProductIdAndStoreId
         $this->getDocumentData = $getDocumentData;
     }
 
-    public function execute(int $productId, int $storeId): array
+    public function execute(int $productId, int $storeId): ?DocumentDataInterface
     {
         $product = $this->productFactory->create();
         $product->setStoreId($storeId);

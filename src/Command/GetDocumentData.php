@@ -5,6 +5,7 @@ namespace MateuszMesek\DocumentDataCatalogProduct\Command;
 use Magento\Catalog\Api\Data\ProductInterface;
 use Magento\Catalog\Model\Product;
 use MateuszMesek\DocumentDataApi\Command\GetDocumentDataInterface;
+use MateuszMesek\DocumentDataApi\Data\DocumentDataInterface;
 use MateuszMesek\DocumentDataCatalogProduct\Data\InputFactory;
 
 class GetDocumentData
@@ -21,7 +22,7 @@ class GetDocumentData
         $this->getDocumentData = $getDocumentData;
     }
 
-    public function execute(ProductInterface $product)
+    public function execute(ProductInterface $product): ?DocumentDataInterface
     {
         $input = $this->inputFactory->create(['product' => $product]);
 
