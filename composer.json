@@ -6,7 +6,7 @@
         "magento/framework": "*",
         "magento/module-catalog": "*",
         "mateuszmesek-magento2/module-document-data": "*",
-        "mateuszmesek-magento2/module-document-data-eav": "*"
+        "mateuszmesek-magento2/module-document-data-eav": ">=0.1.2"
     },
     "license": [
         "MIT"

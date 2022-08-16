@@ -23,7 +23,14 @@
     <virtualType name="MateuszMesek\DocumentDataCatalogProduct\Command\GetDocumentNodes\AttributeResolver" type="MateuszMesek\DocumentDataEav\DocumentNodesResolver">
         <arguments>
             <argument name="entityType" xsi:type="const">Magento\Catalog\Model\Product::ENTITY</argument>
-            <argument name="attributeValueResolver" xsi:type="object">MateuszMesek\DocumentDataCatalogProduct\Command\GetDocumentNodes\AttributeValueResolver</argument>
+            <argument name="attributeValueResolver" xsi:type="object">MateuszMesek\DocumentDataCatalogProduct\AttributeValueResolver</argument>
+            <argument name="attributeReturnTypeResolver" xsi:type="object">MateuszMesek\DocumentDataCatalogProduct\AttributeReturnTypeResolver</argument>
         </arguments>
     </virtualType>
+    <virtualType name="MateuszMesek\DocumentDataCatalogProduct\AttributeValueResolver" type="MateuszMesek\DocumentDataEav\AttributeValueResolver\ByAttributeCode">
+        <arguments>
+            <argument name="defaultResolver" xsi:type="object">MateuszMesek\DocumentDataCatalogProduct\AttributeValueResolver\DefaultResolver</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MateuszMesek\DocumentDataCatalogProduct\AttributeReturnTypeResolver" type="MateuszMesek\DocumentDataEav\AttributeReturnTypeResolver\ByAttributeCode"/>
 </config>

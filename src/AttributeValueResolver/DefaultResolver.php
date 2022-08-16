@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace MateuszMesek\DocumentDataCatalogProduct\Command\GetDocumentNodes;
+namespace MateuszMesek\DocumentDataCatalogProduct\AttributeValueResolver;
 
 use Magento\Catalog\Model\Product;
 use Magento\Eav\Api\Data\AttributeInterface;
@@ -8,7 +8,7 @@ use MateuszMesek\DocumentDataApi\InputInterface;
 use MateuszMesek\DocumentDataCatalogProduct\Data\Input;
 use MateuszMesek\DocumentDataEavApi\AttributeValueResolverInterface;
 
-class AttributeValueResolver implements AttributeValueResolverInterface
+class DefaultResolver implements AttributeValueResolverInterface
 {
     public function resolver(AttributeInterface $attribute, InputInterface $input)
     {
