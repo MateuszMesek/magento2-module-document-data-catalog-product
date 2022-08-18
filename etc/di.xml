@@ -33,4 +33,16 @@
         </arguments>
     </virtualType>
     <virtualType name="MateuszMesek\DocumentDataCatalogProduct\AttributeReturnTypeResolver" type="MateuszMesek\DocumentDataEav\AttributeReturnTypeResolver\ByAttributeCode"/>
+    <type name="MateuszMesek\DocumentDataCatalogProduct\Command\GetDocumentData">
+        <plugin name="MateuszMesek_DocumentDataCatalogProduct" type="MateuszMesek\DocumentDataCatalogProduct\Plugin\ModifyRepository\OnGetDocumentData"/>
+    </type>
+    <type name="Magento\Catalog\Api\CategoryRepositoryInterface">
+        <plugin name="MateuszMesek_DocumentDataCatalogProduct" type="MateuszMesek\DocumentDataCatalogProduct\Plugin\ModifyRepository\OnCategoryRepository"/>
+    </type>
+    <type name="Magento\Catalog\Api\ProductRepositoryInterface">
+        <plugin name="MateuszMesek_DocumentDataCatalogProduct" type="MateuszMesek\DocumentDataCatalogProduct\Plugin\ModifyRepository\OnProductRepository"/>
+    </type>
+    <type name="MateuszMesek\DocumentDataApi\Command\GetDocumentNodeValueInterface">
+        <plugin name="MateuszMesek_DocumentDataCatalogProduct" type="MateuszMesek\DocumentDataCatalogProduct\Plugin\ModifyRepository\GetDocumentNodeValue"/>
+    </type>
 </config>
