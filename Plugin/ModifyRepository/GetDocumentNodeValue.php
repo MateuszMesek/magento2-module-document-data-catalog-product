@@ -2,28 +2,24 @@
 
 namespace MateuszMesek\DocumentDataCatalogProduct\Plugin\ModifyRepository;
 
-use MateuszMesek\DocumentDataApi\Command\GetDocumentNodeValueInterface;
-use MateuszMesek\DocumentDataApi\Data\DocumentDataInterface;
-use MateuszMesek\DocumentDataApi\Data\DocumentNodeInterface;
-use MateuszMesek\DocumentDataApi\InputInterface;
-use MateuszMesek\DocumentDataCatalogProduct\Data\Input;
+use MateuszMesek\DocumentDataApi\Model\Command\GetDocumentNodeValueInterface;
+use MateuszMesek\DocumentDataApi\Model\Data\DocumentNodeInterface;
+use MateuszMesek\DocumentDataApi\Model\InputInterface;
+use MateuszMesek\DocumentDataCatalogProduct\Model\Data\Input;
 
 class GetDocumentNodeValue
 {
-    private State $state;
-
     public function __construct(
-        State $state
+        private readonly State $state
     )
     {
-        $this->state = $state;
     }
 
     public function aroundExecute(
         GetDocumentNodeValueInterface $getDocumentNodeValue,
-        callable $proceed,
-        DocumentNodeInterface $documentNode,
-        InputInterface $input
+        callable                      $proceed,
+        DocumentNodeInterface         $documentNode,
+        InputInterface                $input
     )
     {
         if (!$input instanceof Input) {

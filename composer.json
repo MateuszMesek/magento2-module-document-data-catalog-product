@@ -3,10 +3,13 @@
     "description": "N/A",
     "type": "magento2-module",
     "require": {
+        "php": ">=8.1",
         "magento/framework": "*",
         "magento/module-catalog": "*",
-        "mateuszmesek-magento2/module-document-data": "*",
-        "mateuszmesek-magento2/module-document-data-eav": ">=0.1.2"
+        "magento/module-eav": "*",
+        "magento/module-store": "*",
+        "mateuszmesek-magento2/module-document-data": "^1.0",
+        "mateuszmesek-magento2/module-document-data-eav": "^1.0"
     },
     "license": [
         "MIT"
@@ -16,7 +19,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "MateuszMesek\\DocumentDataCatalogProduct\\": "src"
+            "MateuszMesek\\DocumentDataCatalogProduct\\": ""
         }
     }
 }

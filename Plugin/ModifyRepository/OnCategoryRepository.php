@@ -7,20 +7,17 @@ use Magento\Catalog\Api\Data\CategoryInterface;
 
 class OnCategoryRepository
 {
-    private State $state;
-
     public function __construct(
-        State $state
+        private readonly State $state
     )
     {
-        $this->state = $state;
     }
 
     public function aroundGet(
         CategoryRepositoryInterface $categoryRepository,
-        callable $proceed,
-        $categoryId,
-        $storeId = null
+        callable                    $proceed,
+                                    $categoryId,
+                                    $storeId = null
     ): CategoryInterface
     {
         $product = $this->state->getProduct();

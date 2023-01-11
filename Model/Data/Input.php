@@ -1,19 +1,16 @@
 <?php declare(strict_types=1);
 
-namespace MateuszMesek\DocumentDataCatalogProduct\Data;
+namespace MateuszMesek\DocumentDataCatalogProduct\Model\Data;
 
 use Magento\Catalog\Api\Data\ProductInterface;
-use MateuszMesek\DocumentDataApi\InputInterface;
+use MateuszMesek\DocumentDataApi\Model\InputInterface;
 
 class Input implements InputInterface
 {
-    private ProductInterface $product;
-
     public function __construct(
-        ProductInterface $product
+        private readonly ProductInterface $product
     )
     {
-        $this->product = $product;
     }
 
     /**

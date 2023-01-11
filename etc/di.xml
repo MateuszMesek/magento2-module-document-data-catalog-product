@@ -1,39 +1,40 @@
 <?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <type name="MateuszMesek\DocumentData\Command\GetDocumentNodes\ResolverPool">
+    <type name="MateuszMesek\DocumentData\Model\Command\GetDocumentNodes\ResolverPool">
         <arguments>
             <argument name="documents" xsi:type="array">
-                <item name="catalog_product" xsi:type="string">MateuszMesek\DocumentDataCatalogProduct\Command\GetDocumentNodes\CompositeResolver</item>
+                <item name="catalog_product" xsi:type="string">MateuszMesek\DocumentDataCatalogProduct\Model\Command\GetDocumentNodes\CompositeResolver</item>
             </argument>
         </arguments>
     </type>
-    <virtualType name="MateuszMesek\DocumentDataCatalogProduct\Command\GetDocumentNodes\CompositeResolver" type="MateuszMesek\DocumentData\Command\GetDocumentNodes\CompositeResolver">
+    <virtualType name="MateuszMesek\DocumentDataCatalogProduct\Model\Command\GetDocumentNodes\CompositeResolver" type="MateuszMesek\DocumentData\Model\Command\GetDocumentNodes\CompositeResolver">
         <arguments>
             <argument name="resolvers" xsi:type="array">
-                <item name="config" xsi:type="string">MateuszMesek\DocumentDataCatalogProduct\Command\GetDocumentNodes\Config</item>
-                <item name="attribute" xsi:type="string">MateuszMesek\DocumentDataCatalogProduct\Command\GetDocumentNodes\AttributeResolver</item>
+                <item name="config" xsi:type="string">MateuszMesek\DocumentDataCatalogProduct\Model\Command\GetDocumentNodes\Config</item>
+                <item name="attribute" xsi:type="string">MateuszMesek\DocumentDataCatalogProduct\Model\Command\GetDocumentNodes\AttributeResolver</item>
             </argument>
         </arguments>
     </virtualType>
-    <virtualType name="MateuszMesek\DocumentDataCatalogProduct\Command\GetDocumentNodes\Config" type="MateuszMesek\DocumentData\Command\GetDocumentNodes\ConfigResolver">
+    <virtualType name="MateuszMesek\DocumentDataCatalogProduct\Model\Command\GetDocumentNodes\Config" type="MateuszMesek\DocumentData\Model\Command\GetDocumentNodes\ConfigResolver">
         <arguments>
-            <argument name="documentName" xsi:type="const">Magento\Catalog\Model\Product::ENTITY</argument>
+            <argument name="documentName" xsi:type="string">catalog_product</argument>
         </arguments>
     </virtualType>
-    <virtualType name="MateuszMesek\DocumentDataCatalogProduct\Command\GetDocumentNodes\AttributeResolver" type="MateuszMesek\DocumentDataEav\DocumentNodesResolver">
+    <virtualType name="MateuszMesek\DocumentDataCatalogProduct\Model\Command\GetDocumentNodes\AttributeResolver" type="MateuszMesek\DocumentDataEav\Model\DocumentNodesResolver">
         <arguments>
+            <argument name="documentName" xsi:type="string">catalog_product</argument>
             <argument name="entityType" xsi:type="const">Magento\Catalog\Model\Product::ENTITY</argument>
-            <argument name="attributeValueResolver" xsi:type="object">MateuszMesek\DocumentDataCatalogProduct\AttributeValueResolver</argument>
-            <argument name="attributeReturnTypeResolver" xsi:type="object">MateuszMesek\DocumentDataCatalogProduct\AttributeReturnTypeResolver</argument>
+            <argument name="attributeValueResolver" xsi:type="object">MateuszMesek\DocumentDataCatalogProduct\Model\AttributeValueResolver</argument>
+            <argument name="attributeReturnTypeResolver" xsi:type="object">MateuszMesek\DocumentDataCatalogProduct\Model\AttributeReturnTypeResolver</argument>
         </arguments>
     </virtualType>
-    <virtualType name="MateuszMesek\DocumentDataCatalogProduct\AttributeValueResolver" type="MateuszMesek\DocumentDataEav\AttributeValueResolver\ByAttributeCode">
+    <virtualType name="MateuszMesek\DocumentDataCatalogProduct\Model\AttributeValueResolver" type="MateuszMesek\DocumentDataEav\Model\AttributeValueResolver\ByAttributeCode">
         <arguments>
-            <argument name="defaultResolver" xsi:type="object">MateuszMesek\DocumentDataCatalogProduct\AttributeValueResolver\DefaultResolver</argument>
+            <argument name="defaultResolver" xsi:type="object">MateuszMesek\DocumentDataCatalogProduct\Model\AttributeValueResolver\DefaultResolver</argument>
         </arguments>
     </virtualType>
-    <virtualType name="MateuszMesek\DocumentDataCatalogProduct\AttributeReturnTypeResolver" type="MateuszMesek\DocumentDataEav\AttributeReturnTypeResolver\ByAttributeCode"/>
-    <type name="MateuszMesek\DocumentDataCatalogProduct\Command\GetDocumentData">
+    <virtualType name="MateuszMesek\DocumentDataCatalogProduct\Model\AttributeReturnTypeResolver" type="MateuszMesek\DocumentDataEav\Model\AttributeReturnTypeResolver\ByAttributeCode"/>
+    <type name="MateuszMesek\DocumentDataCatalogProduct\Model\Command\GetDocumentData">
         <plugin name="MateuszMesek_DocumentDataCatalogProduct" type="MateuszMesek\DocumentDataCatalogProduct\Plugin\ModifyRepository\OnGetDocumentData"/>
     </type>
     <type name="Magento\Catalog\Api\CategoryRepositoryInterface">
@@ -42,7 +43,7 @@
     <type name="Magento\Catalog\Api\ProductRepositoryInterface">
         <plugin name="MateuszMesek_DocumentDataCatalogProduct" type="MateuszMesek\DocumentDataCatalogProduct\Plugin\ModifyRepository\OnProductRepository"/>
     </type>
-    <type name="MateuszMesek\DocumentDataApi\Command\GetDocumentNodeValueInterface">
+    <type name="MateuszMesek\DocumentDataApi\Model\Command\GetDocumentNodeValueInterface">
         <plugin name="MateuszMesek_DocumentDataCatalogProduct" type="MateuszMesek\DocumentDataCatalogProduct\Plugin\ModifyRepository\GetDocumentNodeValue"/>
     </type>
 </config>

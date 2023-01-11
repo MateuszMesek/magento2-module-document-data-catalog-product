@@ -7,22 +7,19 @@ use Magento\Catalog\Api\ProductRepositoryInterface;
 
 class OnProductRepository
 {
-    private State $state;
-
     public function __construct(
-        State $state
+        private readonly State $state
     )
     {
-        $this->state = $state;
     }
 
     public function aroundGet(
         ProductRepositoryInterface $productRepository,
-        callable $proceed,
-        $sku,
-        $editMode = false,
-        $storeId = null,
-        $forceReload = false
+        callable                   $proceed,
+                                   $sku,
+                                   $editMode = false,
+                                   $storeId = null,
+                                   $forceReload = false
     ): ProductInterface
     {
         $product = $this->state->getProduct();
@@ -42,11 +39,11 @@ class OnProductRepository
 
     public function aroundGetById(
         ProductRepositoryInterface $productRepository,
-        callable $proceed,
-        $productId,
-        $editMode = false,
-        $storeId = null,
-        $forceReload = false
+        callable                   $proceed,
+                                   $productId,
+                                   $editMode = false,
+                                   $storeId = null,
+                                   $forceReload = false
     ): ProductInterface
     {
         $product = $this->state->getProduct();
