@@ -24,6 +24,12 @@ class DefaultResolver implements AttributeValueResolverInterface
 
         $attributeCode = $attribute->getAttributeCode();
 
-        return $product->getDataUsingMethod($attributeCode);
+        $value = $product->getDataUsingMethod($attributeCode);
+
+        if ($value === null) {
+            $value = $attribute->getDefaultValue();
+        }
+
+        return $value;
     }
 }
